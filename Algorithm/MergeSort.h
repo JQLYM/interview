@@ -39,8 +39,11 @@ void merge_sort(T arr[], int len) {
 *****************/
 template<typename T>
 void merge_sort_recursive(T arr[], T reg[], int start, int end) {
-	if (start >= end)
+	if (start >= end){
+		reg[start] = arr[start];
 		return;
+	}
+		
 	int len = end - start, mid = (len >> 1) + start;
 	int start1 = start, end1 = mid;
 	int start2 = mid + 1, end2 = end;
